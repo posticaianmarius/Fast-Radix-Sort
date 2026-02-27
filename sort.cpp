@@ -23,9 +23,9 @@ static inline void radix_sort_int32_2pass(int* arr, int n, uint32_t* tmp)
 
     // PASS 0: histogram low 16
     memset(cnt, 0, sizeof(cnt));
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++ i) {
         uint32_t v = (uint32_t)arr[i] ^ SIGN;
-        ++cnt[v & MASK];
+        ++ cnt[v & MASK];
     }
 
     // prefix sum
@@ -96,7 +96,7 @@ int main(int argc, char** argv)
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    if (argc < 2) {
+    if(argc < 2) {
         cerr << "Usage:\n"
              << "  ./sort in.txt\n"
              << "  ./sort in.txt stdout\n"
